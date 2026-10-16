@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="LegadoOrcamentos.Vb/LegadoOrcamentos.Vb.vbproj" />
+  <Project Path="Orcamentos.Facade/Orcamentos.Facade.csproj" />
+  <Project Path="Orcamentos.Modern/Orcamentos.Modern.csproj" />
+  <Project Path="Orcamentos.Tests/Orcamentos.Tests.csproj" />
+</Solution>
