@@ -1,0 +1,27 @@
+{
+  "nome": "pt-fronteira-1000",
+  "request": {
+    "linhas": [
+      {
+        "sku": "B-6",
+        "quantidade": 1,
+        "precoUnitario": 1000.00
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 1000.00,
+      "descontoPercent": 8.0,
+      "descontoEuros": 80.00,
+      "base": 920.00,
+      "ivaPercent": 23.0,
+      "ivaEuros": 211.60,
+      "portes": 0.0,
+      "total": 1131.60,
+      "moeda": "EUR"
+    }
+  }
+}

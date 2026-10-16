@@ -1,0 +1,27 @@
+{
+  "nome": "es-portes-gratis",
+  "request": {
+    "linhas": [
+      {
+        "sku": "F-1",
+        "quantidade": 1,
+        "precoUnitario": 500.00
+      }
+    ],
+    "pais": "ES"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 500.00,
+      "descontoPercent": 5.0,
+      "descontoEuros": 25.00,
+      "base": 475.00,
+      "ivaPercent": 21.0,
+      "ivaEuros": 99.75,
+      "portes": 0.0,
+      "total": 574.75,
+      "moeda": "EUR"
+    }
+  }
+}

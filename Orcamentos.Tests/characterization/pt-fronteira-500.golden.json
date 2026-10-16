@@ -1,0 +1,27 @@
+{
+  "nome": "pt-fronteira-500",
+  "request": {
+    "linhas": [
+      {
+        "sku": "B-4",
+        "quantidade": 1,
+        "precoUnitario": 500.00
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 500.00,
+      "descontoPercent": 5.0,
+      "descontoEuros": 25.00,
+      "base": 475.00,
+      "ivaPercent": 23.0,
+      "ivaEuros": 109.25,
+      "portes": 0.0,
+      "total": 584.25,
+      "moeda": "EUR"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "nome": "pt-happy",
+  "request": {
+    "linhas": [
+      {
+        "sku": "A-1",
+        "quantidade": 3,
+        "precoUnitario": 19.99
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 59.97,
+      "descontoPercent": 0.0,
+      "descontoEuros": 0.00,
+      "base": 59.97,
+      "ivaPercent": 23.0,
+      "ivaEuros": 13.79,
+      "portes": 4.9,
+      "total": 78.66,
+      "moeda": "EUR"
+    }
+  }
+}

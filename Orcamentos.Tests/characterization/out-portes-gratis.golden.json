@@ -1,0 +1,27 @@
+{
+  "nome": "out-portes-gratis",
+  "request": {
+    "linhas": [
+      {
+        "sku": "F-3",
+        "quantidade": 1,
+        "precoUnitario": 500.00
+      }
+    ],
+    "pais": "OUT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 500.00,
+      "descontoPercent": 5.0,
+      "descontoEuros": 25.00,
+      "base": 475.00,
+      "ivaPercent": 0.0,
+      "ivaEuros": 0.00,
+      "portes": 0.0,
+      "total": 475.00,
+      "moeda": "EUR"
+    }
+  }
+}

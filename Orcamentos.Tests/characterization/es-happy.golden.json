@@ -1,0 +1,27 @@
+{
+  "nome": "es-happy",
+  "request": {
+    "linhas": [
+      {
+        "sku": "C-1",
+        "quantidade": 2,
+        "precoUnitario": 25.00
+      }
+    ],
+    "pais": "ES"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 50.00,
+      "descontoPercent": 0.0,
+      "descontoEuros": 0.00,
+      "base": 50.00,
+      "ivaPercent": 21.0,
+      "ivaEuros": 10.50,
+      "portes": 9.9,
+      "total": 70.40,
+      "moeda": "EUR"
+    }
+  }
+}

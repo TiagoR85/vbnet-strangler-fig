@@ -1,0 +1,32 @@
+{
+  "nome": "pt-multi-linha",
+  "request": {
+    "linhas": [
+      {
+        "sku": "E-1",
+        "quantidade": 2,
+        "precoUnitario": 10.50
+      },
+      {
+        "sku": "E-2",
+        "quantidade": 3,
+        "precoUnitario": 20.00
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 81.00,
+      "descontoPercent": 0.0,
+      "descontoEuros": 0.00,
+      "base": 81.00,
+      "ivaPercent": 23.0,
+      "ivaEuros": 18.63,
+      "portes": 4.9,
+      "total": 104.53,
+      "moeda": "EUR"
+    }
+  }
+}

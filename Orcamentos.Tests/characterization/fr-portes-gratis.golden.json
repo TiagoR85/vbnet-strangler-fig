@@ -1,0 +1,27 @@
+{
+  "nome": "fr-portes-gratis",
+  "request": {
+    "linhas": [
+      {
+        "sku": "F-2",
+        "quantidade": 1,
+        "precoUnitario": 500.00
+      }
+    ],
+    "pais": "FR"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 500.00,
+      "descontoPercent": 5.0,
+      "descontoEuros": 25.00,
+      "base": 475.00,
+      "ivaPercent": 20.0,
+      "ivaEuros": 95.00,
+      "portes": 0.0,
+      "total": 570.00,
+      "moeda": "EUR"
+    }
+  }
+}

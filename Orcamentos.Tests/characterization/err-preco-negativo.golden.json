@@ -1,0 +1,19 @@
+{
+  "nome": "err-preco-negativo",
+  "request": {
+    "linhas": [
+      {
+        "sku": "H-2",
+        "quantidade": 1,
+        "precoUnitario": -1.00
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 400,
+    "body": {
+      "erro": "precoUnitario deve ser \u003E= 0"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "nome": "pt-escalon-750",
+  "request": {
+    "linhas": [
+      {
+        "sku": "G-1",
+        "quantidade": 3,
+        "precoUnitario": 250.00
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 750.00,
+      "descontoPercent": 5.0,
+      "descontoEuros": 37.50,
+      "base": 712.50,
+      "ivaPercent": 23.0,
+      "ivaEuros": 163.88,
+      "portes": 0.0,
+      "total": 876.38,
+      "moeda": "EUR"
+    }
+  }
+}

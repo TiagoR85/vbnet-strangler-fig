@@ -1,0 +1,19 @@
+{
+  "nome": "err-pais",
+  "request": {
+    "linhas": [
+      {
+        "sku": "H-3",
+        "quantidade": 1,
+        "precoUnitario": 10.00
+      }
+    ],
+    "pais": "DE"
+  },
+  "esperado": {
+    "status": 400,
+    "body": {
+      "erro": "pais desconhecido"
+    }
+  }
+}

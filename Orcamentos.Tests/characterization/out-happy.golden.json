@@ -1,0 +1,27 @@
+{
+  "nome": "out-happy",
+  "request": {
+    "linhas": [
+      {
+        "sku": "C-3",
+        "quantidade": 1,
+        "precoUnitario": 80.00
+      }
+    ],
+    "pais": "OUT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 80.00,
+      "descontoPercent": 0.0,
+      "descontoEuros": 0.00,
+      "base": 80.00,
+      "ivaPercent": 0.0,
+      "ivaEuros": 0.00,
+      "portes": 19.9,
+      "total": 99.90,
+      "moeda": "EUR"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "nome": "pt-fronteira-9999b",
+  "request": {
+    "linhas": [
+      {
+        "sku": "B-5",
+        "quantidade": 1,
+        "precoUnitario": 999.99
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 999.99,
+      "descontoPercent": 5.0,
+      "descontoEuros": 50.00,
+      "base": 949.99,
+      "ivaPercent": 23.0,
+      "ivaEuros": 218.50,
+      "portes": 0.0,
+      "total": 1168.49,
+      "moeda": "EUR"
+    }
+  }
+}

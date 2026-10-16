@@ -1,0 +1,13 @@
+{
+  "nome": "err-linha-vazia",
+  "request": {
+    "linhas": [],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 400,
+    "body": {
+      "erro": "pelo menos uma linha"
+    }
+  }
+}

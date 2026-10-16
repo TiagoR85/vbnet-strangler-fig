@@ -1,0 +1,19 @@
+{
+  "nome": "err-quantidade-zero",
+  "request": {
+    "linhas": [
+      {
+        "sku": "H-1",
+        "quantidade": 0,
+        "precoUnitario": 10.00
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 400,
+    "body": {
+      "erro": "quantidade deve ser \u003E= 1"
+    }
+  }
+}

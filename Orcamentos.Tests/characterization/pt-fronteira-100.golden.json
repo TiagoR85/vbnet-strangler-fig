@@ -1,0 +1,27 @@
+{
+  "nome": "pt-fronteira-100",
+  "request": {
+    "linhas": [
+      {
+        "sku": "B-2",
+        "quantidade": 1,
+        "precoUnitario": 100.00
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 100.00,
+      "descontoPercent": 2.0,
+      "descontoEuros": 2.00,
+      "base": 98.00,
+      "ivaPercent": 23.0,
+      "ivaEuros": 22.54,
+      "portes": 4.9,
+      "total": 125.44,
+      "moeda": "EUR"
+    }
+  }
+}

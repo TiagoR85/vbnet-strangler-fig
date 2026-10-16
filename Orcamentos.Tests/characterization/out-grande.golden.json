@@ -1,0 +1,27 @@
+{
+  "nome": "out-grande",
+  "request": {
+    "linhas": [
+      {
+        "sku": "G-2",
+        "quantidade": 10,
+        "precoUnitario": 150.00
+      }
+    ],
+    "pais": "OUT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 1500.00,
+      "descontoPercent": 8.0,
+      "descontoEuros": 120.00,
+      "base": 1380.00,
+      "ivaPercent": 0.0,
+      "ivaEuros": 0.00,
+      "portes": 0.0,
+      "total": 1380.00,
+      "moeda": "EUR"
+    }
+  }
+}

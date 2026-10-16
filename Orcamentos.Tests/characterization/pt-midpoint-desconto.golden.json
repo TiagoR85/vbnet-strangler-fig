@@ -1,0 +1,27 @@
+{
+  "nome": "pt-midpoint-desconto",
+  "request": {
+    "linhas": [
+      {
+        "sku": "D-1",
+        "quantidade": 1,
+        "precoUnitario": 100.25
+      }
+    ],
+    "pais": "PT"
+  },
+  "esperado": {
+    "status": 200,
+    "body": {
+      "subtotal": 100.25,
+      "descontoPercent": 2.0,
+      "descontoEuros": 2.00,
+      "base": 98.25,
+      "ivaPercent": 23.0,
+      "ivaEuros": 22.60,
+      "portes": 4.9,
+      "total": 125.75,
+      "moeda": "EUR"
+    }
+  }
+}
