@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var opcoes = builder.Configuration.GetSection("Strangler").Get<StranglerOptions>() ?? new StranglerOptions();
 opcoes.Validar();
 builder.Services.AddSingleton(opcoes);
+builder.Services.AddSingleton<IOrcamentoCalculadora, OrcamentoCalculadora>();
 builder.Services.AddHttpClient("legado", cliente =>
 {
     cliente.BaseAddress = new Uri(opcoes.LegacyUrl);
@@ -33,7 +34,7 @@ app.MapGet("/health", async (StranglerOptions op, IHttpClientFactory fabrica) =>
 });
 
 app.MapPost("/orcamentos/calcular", async (HttpRequest pedido, StranglerOptions op,
-    IHttpClientFactory fabrica, ILoggerFactory fabricaLogs) =>
+    IOrcamentoCalculadora calculadora, IHttpClientFactory fabrica, ILoggerFactory fabricaLogs) =>
 {
     string? header = pedido.Headers["X-Strangler-Target"];
     string alvo;
@@ -54,7 +55,7 @@ app.MapPost("/orcamentos/calcular", async (HttpRequest pedido, StranglerOptions 
 
     if (alvo == "modern")
     {
-        var (statusMod, textoMod) = Moderno(corpo);
+        var (statusMod, textoMod) = Moderno(calculadora, corpo);
         return Results.Text(textoMod, "application/json", statusCode: statusMod);
     }
 
@@ -73,7 +74,7 @@ app.MapPost("/orcamentos/calcular", async (HttpRequest pedido, StranglerOptions 
     if (alvo == "legacy")
         return Results.Text(legado.texto, "application/json", statusCode: legado.status);
 
-    var (statusMod2, textoMod2) = Moderno(corpo);
+    var (statusMod2, textoMod2) = Moderno(calculadora, corpo);
     var divergencias = statusMod2 == legado.status
         ? JsonCanonico.Divergencias(legado.texto, textoMod2)
         : new List<string> { "status" };
@@ -89,11 +90,11 @@ app.MapPost("/orcamentos/calcular", async (HttpRequest pedido, StranglerOptions 
 
 app.Run();
 
-static (int Status, string Texto) Moderno(string corpo)
+static (int Status, string Texto) Moderno(IOrcamentoCalculadora calculadora, string corpo)
 {
     try
     {
-        return (200, OrcamentoServico.CalcularJson(corpo).ToJsonString());
+        return (200, calculadora.CalcularJson(corpo).ToJsonString());
     }
     catch (CalculoException ex)
     {
